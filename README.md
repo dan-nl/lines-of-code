@@ -1,6 +1,6 @@
 # lines-of-code
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.1.
+this project was generated with [angular cli](https://github.com/angular/angular-cli) version 1.3.1.
 
 
 ## table of contents
@@ -10,6 +10,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
     1. [install application dependencies](#install-application-dependencies)
 1. [start the application](#start-the-application)
 1. [running unit tests](#running-unit-tests)
+    1. [with code coverage](#with-code-coverage)
 
 
 ## getting started
@@ -47,7 +48,14 @@ ng serve -o
 
 
 ## running unit tests
-run unit tests with [Karma](https://karma-runner.github.io) by issuing the following command.
+run unit tests with [karma](https://karma-runner.github.io) by issuing the following command.
 ```sh
 ng test
+```
+
+
+### with code coverage
+run unit tests with [karma](https://karma-runner.github.io) and create a code coverage report with [istanbul](https://github.com/mattlewis92/karma-coverage-istanbul-reporter) by issuing the following command; coverage report will be in the coverage/ directory.
+```sh
+ng test --code-coverage
 ```
