@@ -152,7 +152,7 @@ describe('AppComponent', () => {
   it('.processCode() should handle multi-line edge case 2', async(() => {
     let code = `
       /*****
-       * This is a test program with 5 lines of code
+       * This is a test program with 6 lines of code
        *  \\/* no nesting allowed!
        //*****//***/// Slightly pathological comment ending...
 
