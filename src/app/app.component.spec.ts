@@ -11,22 +11,23 @@ describe('AppComponent', () => {
     }).compileComponents();
   }));
 
-  it('should create the app', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
+  it('should contain a static method .processCode()', async(() => {
+    expect(typeof AppComponent.processCode).toEqual('function');
   }));
 
-  it(`should have as title 'app'`, async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('app');
+  it('.processCode() should return 0 if not passed a String', async(() => {
+    expect(AppComponent.processCode([])).toEqual(0);
+    expect(AppComponent.processCode(3)).toEqual(0);
+    expect(AppComponent.processCode(true)).toEqual(0);
+    expect(AppComponent.processCode({})).toEqual(0);
   }));
 
-  it('should render title in a h1 tag', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to app!');
+  it('.processCode() should add each line of code', async(() => {
+    let code =
+      'public interface Dave {\n' +
+        'int countLines(File inFile); // not the real signature!\n' +
+      '}';
+
+    expect(AppComponent.processCode(code)).toEqual(3);
   }));
 });
