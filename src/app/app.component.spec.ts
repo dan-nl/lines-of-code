@@ -30,4 +30,16 @@ describe('AppComponent', () => {
 
     expect(AppComponent.processCode(code)).toEqual(3);
   }));
+
+  it('.processCode() should not add blank or whitespace lines of code', async(() => {
+    let code = `
+      public interface Dave {',
+
+           int countLines(File inFile); // not the real signature!'
+      }
+
+    `;
+
+    expect(AppComponent.processCode(code)).toEqual(3);
+  }));
 });
