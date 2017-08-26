@@ -23,6 +23,7 @@ export class AppComponent {
     }
 
     let code_lines = code.split('\n');
+    let multi_line_comments_open = 0;
 
     return code_lines.reduce(
       (acc, code_line) => {
@@ -30,7 +31,19 @@ export class AppComponent {
           return acc;
         }
 
-        if (code_line.trim().indexOf('/*') === 0) {
+        if (code_line.trim().indexOf('/*') !== -1) {
+          if (code_line.trim().indexOf('/*') > 0) {
+            acc++;
+          }
+
+          multi_line_comments_open++;
+        }
+
+        if (multi_line_comments_open > 0 ) {
+          if (code_line.trim().indexOf('*/') !== -1) {
+            multi_line_comments_open--;
+          }
+
           return acc;
         }
 
