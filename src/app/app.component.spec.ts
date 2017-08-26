@@ -130,7 +130,7 @@ describe('AppComponent', () => {
     expect(AppComponent.processCode(code)).toEqual(3);
   }));
 
-  it('.processCode() should not add multi-line edge case 1', async(() => {
+  it('.processCode() should handle multi-line edge case 1', async(() => {
     let code = `
       /*****
        * This is a test program with 5 lines of code
@@ -149,7 +149,7 @@ describe('AppComponent', () => {
     expect(AppComponent.processCode(code)).toEqual(5);
   }));
 
-  it('.processCode() should not add multi-line edge case 2', async(() => {
+  it('.processCode() should handle multi-line edge case 2', async(() => {
     let code = `
       /*****
        * This is a test program with 5 lines of code
