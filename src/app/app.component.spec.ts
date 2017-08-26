@@ -104,7 +104,7 @@ describe('AppComponent', () => {
     expect(AppComponent.processCode(code)).toEqual(3);
   }));
 
-  it('.processCode() should not multi-line comment on single line', async(() => {
+  it('.processCode() should not add multi-line comment on single line', async(() => {
     let code = `
       public interface Dave {
 

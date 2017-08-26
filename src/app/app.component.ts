@@ -30,6 +30,10 @@ export class AppComponent {
           return acc;
         }
 
+        if (code_line.trim().indexOf('/*') === 0) {
+          return acc;
+        }
+
         if (code_line.trim().indexOf('//') === 0) {
           return acc;
         }
