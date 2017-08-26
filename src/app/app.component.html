@@ -1,5 +1,5 @@
 <h1>lines of code</h1>
 <p><label for="code">add your code to this textarea</label></p>
-<textarea id="code" class="form-control" rows="7"></textarea>
+<textarea id="code" class="form-control" rows="7" (keyup)="onKey($event)"></textarea>
 <h2>result</h2>
-<p>0 lines of code</p>
+<p>{{ lines_of_code }} lines of code</p>
