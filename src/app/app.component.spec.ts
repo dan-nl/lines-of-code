@@ -11,8 +11,10 @@ describe('AppComponent', () => {
     }).compileComponents();
   }));
 
-  it('AppComponent should contain a static method .processCode()', async(() => {
-    expect(typeof AppComponent.processCode).toEqual('function');
+  it('AppComponent instance should contain a variable, lines_of_code, set initially to 0', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    expect(app.lines_of_code).toEqual(0);
   }));
 
   it('AppComponent instance should contain a method, onKey()', async(() => {
@@ -21,13 +23,7 @@ describe('AppComponent', () => {
     expect(typeof app.onKey).toEqual('function');
   }));
 
-  it('AppComponent instance should contain a variable, lines_of_code, set initially to 0', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.lines_of_code).toEqual(0);
-  }));
-
-  it('AppComponent method, onKey, should handle event.target.value received by the textarea keyup listener', async(() => {
+  it('AppComponent method, onKey(), should handle event.target.value received by the textarea keyup listener', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
 
@@ -41,6 +37,10 @@ describe('AppComponent', () => {
 
     app.onKey(event);
     expect(app.lines_of_code).toEqual(3);
+  }));
+
+  it('AppComponent should contain a static method .processCode()', async(() => {
+    expect(typeof AppComponent.processCode).toEqual('function');
   }));
 
   it('.processCode() should return 0 if not passed a String', async(() => {
