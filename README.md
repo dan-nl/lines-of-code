@@ -11,6 +11,7 @@ this project was generated with [angular cli](https://github.com/angular/angular
 1. [start the application](#start-the-application)
 1. [running unit tests](#running-unit-tests)
     1. [with code coverage](#with-code-coverage)
+1. [coding challenge](LinesOfCode.md)
 
 
 ## getting started

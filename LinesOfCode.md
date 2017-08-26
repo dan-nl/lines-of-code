@@ -33,5 +33,5 @@ and…
 Remember that Java comments are either // to the end of line, or /* to the next */. The block comments do not nest. There may be multiple /* … */ comments on a line. Whitespace includes tabs, spaces, carriage returns, and vertical tabs. Oh, and remember that comment start sequences that appear inside Java strings should be ignored.
 
 Goals of the task
-The mixture of line-based things (single line comments, blank lines, and so on) with the stream-based block comments can make solutions slightly ugly. While coding your solution, consider the structure of your code, and see how well it fits the structure of the problem. Build a simple Angular 2+ app where you could paste some code and line count would be displayed.
+The mixture of line-based things (single line comments, blank lines, and so on) with the stream-based block comments can make solutions slightly ugly. While coding your solution, consider the structure of your code, and see how well it fits the structure of the problem. Build a simple Angular 2+ app where you could paste some code and line count would be displayed. @link http://codekata.com/kata/kata13-counting-code-lines/
 
