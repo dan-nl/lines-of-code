@@ -15,6 +15,12 @@ describe('AppComponent', () => {
     expect(typeof AppComponent.processCode).toEqual('function');
   }));
 
+  it('app should contain a variable, lines_of_code, set initially to 0 ', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    expect(app.lines_of_code).toEqual(0);
+  }));
+
   it('.processCode() should return 0 if not passed a String', async(() => {
     expect(AppComponent.processCode([])).toEqual(0);
     expect(AppComponent.processCode(3)).toEqual(0);
