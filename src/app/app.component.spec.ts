@@ -92,4 +92,15 @@ describe('AppComponent', () => {
 
     expect(AppComponent.processCode(code)).toEqual(3);
   }));
+
+  it('.processCode() should not add lines of code that begin with //', async(() => {
+    let code = `
+      public interface Dave {
+        int countLines(File inFile); // not the real signature!
+        // another single line comment
+      }
+    `;
+
+    expect(AppComponent.processCode(code)).toEqual(3);
+  }));
 });
