@@ -1,30 +1,53 @@
-# LinesOfCode
+# lines-of-code
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.1.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## table of contents
+1. [getting started](#getting-started)
+    1. [installation dependencies](#installation-dependencies)
+    1. [clone the repo](#clone-the-repo)
+    1. [install application dependencies](#install-application-dependencies)
+1. [start the application](#start-the-application)
+1. [running unit tests](#running-unit-tests)
 
-Run `ng serve -o` to open the application in a browser.
 
-## Code scaffolding
+## getting started
+### installation dependencies
+you need to make sure you have the following installation dependencies installed on the computer where you will run the application; a version number is indicated when a dependency has a minimum requirement.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* cli
+* default browser ( modern )
+* git ( v2.10.1 )
+* node ( v6.11.2 )
+* npm ( v3.10.10 )
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+### clone the repo
+create a local project directory and clone the repo into that directory. replace the content between `<>` with your related directory information.
+``` sh
+mkdir -p <local/project/directory>/lines-of-code
+git clone https://github.com/dan-nl/lines-of-code.git <local/project/directory>
+```
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### install application dependencies
+change directory to the new project directory and install application dependencies. replace the content between `<>` with your related directory information.
+``` sh
+cd <local/project/directory>/lines-of-code
+npm install
+```
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+## start the application
+start the application with the following command; the `-o` flag will automatically open your default browser to the application.
+``` sh
+ng serve -o
+```
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## running unit tests
+run unit tests with [Karma](https://karma-runner.github.io) by issuing the following command.
+```sh
+ng test
+```
