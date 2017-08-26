@@ -80,4 +80,16 @@ describe('AppComponent', () => {
 
     expect(AppComponent.processCode(code)).toEqual(3);
   }));
+
+  it('.processCode() should add lines of code that begin with tab character(s)', async(() => {
+    let code = `
+      \tpublic interface Dave {
+      \t
+       \t    int countLines(File inFile); // not the real signature!
+      }
+      \t
+    `;
+
+    expect(AppComponent.processCode(code)).toEqual(3);
+  }));
 });
