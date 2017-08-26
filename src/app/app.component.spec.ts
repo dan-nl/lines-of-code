@@ -11,14 +11,36 @@ describe('AppComponent', () => {
     }).compileComponents();
   }));
 
-  it('should contain a static method .processCode()', async(() => {
+  it('AppComponent should contain a static method .processCode()', async(() => {
     expect(typeof AppComponent.processCode).toEqual('function');
   }));
 
-  it('app should contain a variable, lines_of_code, set initially to 0 ', async(() => {
+  it('AppComponent instance should contain a method, onKey()', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    expect(typeof app.onKey).toEqual('function');
+  }));
+
+  it('AppComponent instance should contain a variable, lines_of_code, set initially to 0', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app.lines_of_code).toEqual(0);
+  }));
+
+  it('AppComponent method, onKey, should handle event.target.value received by the textarea keyup listener', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+
+    let event = {
+      target: {
+        value: 'public interface Dave {\n' +
+        'int countLines(File inFile); // not the real signature!\n' +
+        '}'
+      }
+    };
+
+    app.onKey(event);
+    expect(app.lines_of_code).toEqual(3);
   }));
 
   it('.processCode() should return 0 if not passed a String', async(() => {
