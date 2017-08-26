@@ -25,7 +25,11 @@ export class AppComponent {
     let code_lines = code.split('\n');
 
     return code_lines.reduce(
-      (acc) => {
+      (acc, code_line) => {
+        if (code_line.trim().length === 0) {
+          return acc;
+        }
+
         return acc + 1;
       },
       result
