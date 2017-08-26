@@ -31,7 +31,7 @@ export class AppComponent {
           return acc;
         }
 
-        if (code_line.trim().indexOf('/*') !== -1) {
+        if (code_line.trim().indexOf('/*') !== -1 && multi_line_comments_open === 0) {
           if (code_line.trim().indexOf('/*') > 0) {
             acc++;
           }
