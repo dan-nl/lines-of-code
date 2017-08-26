@@ -116,4 +116,17 @@ describe('AppComponent', () => {
 
     expect(AppComponent.processCode(code)).toEqual(3);
   }));
+
+  it('.processCode() should not add multi-line comment on multiple lines', async(() => {
+    let code = `
+      /*
+       * multi-line comment on multiple lines
+       */
+      public interface Dave {
+        int countLines(File inFile); // single line comment after some code
+      }
+    `;
+
+    expect(AppComponent.processCode(code)).toEqual(3);
+  }));
 });
