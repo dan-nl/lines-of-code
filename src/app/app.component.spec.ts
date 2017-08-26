@@ -96,8 +96,21 @@ describe('AppComponent', () => {
   it('.processCode() should not add lines of code that begin with //', async(() => {
     let code = `
       public interface Dave {
-        int countLines(File inFile); // not the real signature!
+        int countLines(File inFile); // single line comment after some code
         // another single line comment
+      }
+    `;
+
+    expect(AppComponent.processCode(code)).toEqual(3);
+  }));
+
+  it('.processCode() should not multi-line comment on single line', async(() => {
+    let code = `
+      public interface Dave {
+
+        /* multi-line comment on single line */
+        int countLines(File inFile); /* multi-line comment on single line after some code */
+
       }
     `;
 
